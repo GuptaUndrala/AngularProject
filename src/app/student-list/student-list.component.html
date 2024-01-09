@@ -14,7 +14,15 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let student of studentRowData">
+          <tr
+            *ngFor="let student of studentRowData"
+            [ngClass]="{
+              'table-success': student.grade === 'A',
+              'table-primary': student.grade === 'B',
+              'table-warning': student.grade === 'C',
+              'table-danger': student.grade === 'D'
+            }"
+          >
             <td>{{ student.id }}</td>
             <td>{{ student.name }}</td>
             <td>{{ student.marks }}</td>
