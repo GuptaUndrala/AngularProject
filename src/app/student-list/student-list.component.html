@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row my-5">
+    <div class="col-12">
+      <h1>{{ pageTitle }}</h1>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12">
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th *ngFor="let header of studentTableheaders">{{ header }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let student of studentRowData">
+            <td>{{ student.id }}</td>
+            <td>{{ student.name }}</td>
+            <td>{{ student.marks }}</td>
+            <td>{{ student.grade }}</td>
+            <td>{{ student.result }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

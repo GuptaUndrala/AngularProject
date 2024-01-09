@@ -1,0 +1,40 @@
+{
+    "headers": ["Id","Student name","Marks","Grade","Result"],
+    "students": [
+        {
+            "id": 1,
+            "name": "Ravi",
+            "marks": 90,
+            "grade": "A",
+            "result": "Pass"
+        },
+        {
+            "id": 2,
+            "name": "Raj",
+            "marks": 74,
+            "grade": "B",
+            "result": "Pass"
+        },
+        {
+            "id": 3,
+            "name": "Roop",
+            "marks": 49,
+            "grade": "C",
+            "result": "Pass"
+        },
+        {
+            "id": 4,
+            "name": "Ram",
+            "marks": 35,
+            "grade": "C",
+            "result": "Pass"
+        },
+        {
+            "id": 5,
+            "name": "Ramraj",
+            "marks": 33,
+            "grade": "D",
+            "result": "Fail"
+        }
+    ]
+}
