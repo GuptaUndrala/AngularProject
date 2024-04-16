@@ -15,7 +15,7 @@
         </thead>
         <tbody>
           <tr
-            *ngFor="let student of studentRowData"
+            *ngFor="let student of studentRowData; let i = index"
             [ngClass]="{
               'table-success': student.grade === 'A',
               'table-primary': student.grade === 'B',
@@ -23,11 +23,23 @@
               'table-danger': student.grade === 'D'
             }"
           >
-            <td>{{ student.id }}</td>
-            <td>{{ student.name }}</td>
+            <td>
+              {{ student.id }}
+            </td>
+            <td style="width: 20%;">
+              <div *ngIf="!student.isEdit; else elseBlock">
+                {{ student.name }}
+              </div>
+              <ng-template #elseBlock>
+                <input class="form-control" [value]="student.name">
+              </ng-template>                          
+            </td>
             <td>{{ student.marks }}</td>
             <td>{{ student.grade }}</td>
             <td>{{ student.result }}</td>
+            <td>
+              <button class="btn btn-primary" (click)="onEdit(i)">{{!student.isEdit ? "Edit" : "Update"}}</button>
+            </td>
           </tr>
         </tbody>
       </table>

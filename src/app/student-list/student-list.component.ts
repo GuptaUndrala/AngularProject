@@ -19,6 +19,12 @@ export class StudentListComponent implements OnInit{
     this.getStudentData();
   }
 
+  onEdit(index:number) {
+    this.studentRowData[index].isEdit = !this.studentRowData[index].isEdit;  
+    
+    //data should update on update button click
+  }
+
   getStudentData() {
     this.studentDataService.getStudents().subscribe((res: StudentsData)=>{
       this.studentTableheaders = res.headers;

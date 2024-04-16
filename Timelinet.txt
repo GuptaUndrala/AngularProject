@@ -1,0 +1,30 @@
+Concepts
+- Services, Models, Dependency injection (1)
+- bindings (2,3) 
+    - (let, var, const differnces and when to use) 
+    - (Data types) 
+    - How to define different functions
+    - (JavaScript builtin functions ex: map, filter ect..) 
+      https://www.youtube.com/watch?v=80KX6aD9R7M&list=PLnHJACx3NwAfRUcuKaYhZ6T5NRIpzgNGJ
+
+- Angular forms
+- 
+
+
+Tasks
+1. Creating dynamic table creation - Done
+2. Add last column in the table and also add the edit button to edit the Student table row - ToDo
+3. Add search box to search the Student name in the student table - ToDo
+4. Login page: Create a login page and add a login form and validations
+5. 
+
+
+
+Builtin functions
+- String functions
+    - charAt(index)
+    - toUpperCase()
+    - toLowerCase()
+    - substring(startIndex, endIndex)
+    - substr(startIndex, lenght)
+    - Split()

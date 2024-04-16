@@ -8,5 +8,6 @@ export interface Student{
     name: string,
     marks: number,
     grade: string,
-    result: string
+    result: string,
+    isEdit: boolean
 }
