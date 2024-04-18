@@ -8,12 +8,12 @@ import { StudentsData } from '../models/student-model';
 })
 
 export class StudentDataService {
-  private severURL = 'assets/student-data.json';
+  private serverURL = 'assets/student-data.json';
 
   constructor(private http: HttpClient) { };
 
   getStudents():Observable<StudentsData>{
-    const endPoint = this.severURL;
+    const endPoint = this.serverURL;
     return this.http.get<StudentsData>(endPoint);
   }
 }

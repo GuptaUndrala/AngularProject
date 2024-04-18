@@ -11,6 +11,8 @@ export class StudentListComponent implements OnInit{
   pageTitle: string = "Student Title";
   studentTableheaders:string[] = [];
   studentRowData: Student[] = [];
+  lastIndex!: number;
+  // updateStudentName: string = "";
 
 
   constructor(private studentDataService: StudentDataService){}
@@ -19,11 +21,43 @@ export class StudentListComponent implements OnInit{
     this.getStudentData();
   }
 
+  // onEdit(index:number) {
+  //   if(this.lastIndex === undefined){
+  //     this.lastIndex = index;
+  //     this.studentRowData[index].isEdit = !this.studentRowData[index].isEdit; 
+  //     return
+  //   }
+
+  //   if(this.lastIndex === index){
+  //     this.studentRowData[index].isEdit = !this.studentRowData[index].isEdit; 
+  //     this.lastIndex = index;
+  //     return
+  //   }
+
+  //   if(this.lastIndex !== index){
+  //     this.studentRowData[this.lastIndex].isEdit = !this.studentRowData[this.lastIndex].isEdit;        
+  //     this.studentRowData[index].isEdit = !this.studentRowData[index].isEdit; 
+  //     this.lastIndex = index; 
+  //   }
+  // }
+
   onEdit(index:number) {
-    this.studentRowData[index].isEdit = !this.studentRowData[index].isEdit;  
+    // if(!this.studentRowData[index].marks || !this.studentRowData[this.lastIndex].marks){
+    //   return
+    // }
+
+    if(this.lastIndex !== undefined && this.lastIndex !== index){
+      this.studentRowData[this.lastIndex].isEdit = false;
+    }
+    this.studentRowData[index].isEdit = !this.studentRowData[index].isEdit;
+    this.lastIndex = index;   
     
-    //data should update on update button click
+    
   }
+
+  // onUpdate(event: any, index: number){
+  //   console.log(event.target.value, index);
+  // }
 
   getStudentData() {
     this.studentDataService.getStudents().subscribe((res: StudentsData)=>{

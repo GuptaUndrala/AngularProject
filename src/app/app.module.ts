@@ -7,6 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { StudentListComponent } from './student-list/student-list.component';
 import { StudentDataService } from './services/student-data.service';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { StudentDataService } from './services/student-data.service';
     AppRoutingModule,
     CommonModule,
     HttpClientModule,
+    FormsModule
   ],
   providers: [StudentDataService,],
   bootstrap: [AppComponent]
